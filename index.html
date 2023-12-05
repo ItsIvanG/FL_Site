@@ -38,6 +38,9 @@
             <li class="nav-item">
               <a href="#activities" class="nav-link">Activities</a>
             </li>
+            <li class="nav-item">
+              <a href="#finalproject" class="nav-link">Final Project</a>
+            </li>
           </ul>
         </div>
 
@@ -60,7 +63,7 @@
                 <p class="lead text-light mb-5 pb-5">My Foreign Language website<br>我的外语网站<br>
                   Wǒ de wàiyǔ wǎngzhàn</p>
                 <div>
-                  <a href="#about" class="bi bi-chevron-down text-white btn btn-outline-primary"> Learn More</a>
+                  <a href="#about" class="bi bi-chevron-down text-white btn btn-outline-primary glow-button"> Learn More</a>
                 </div>
               </div>
   
@@ -156,9 +159,7 @@
     </div>
     <div class="bg-secondary">
       <div class="container py-5 text-light">
-        <a id="activities"><p class="display-5 text-center">Activities</p></a>
-        
-        <p class="text-center">活动 Huódòng</p>
+        <a id="activities"><p class="display-5 text-center mb-5">FL 301 Activities</p></a>
         
         <div class="row justify-content-center">
 
@@ -176,7 +177,7 @@
                   Xiě wǒ de dì yī gè hànzì.
                 </p>
                 <a class="btn btn-primary bi bi-caret-right-square-fill" href="javascript:showAct(1);">
-                  Views
+                  View
                 </a>
               </div>
             </div>
@@ -274,7 +275,7 @@
                   <b>Activity #6</b>
                 </p>
                 <p class="card-text">
-                  Ordering at a McDonald in Mandarin<br>
+                  Ordering at a McDonald's in Mandarin<br>
                   在 McDonald 用普通话订购<br>
                   Zài McDonald yòng pǔtōnghuà dìnggòu
                 
@@ -290,18 +291,47 @@
 
       </div>
     </div>
+    <div class="bg-black">
+      <div class="container text-white py-5">
+        <a id="finalproject"><p class="display-5 text-center">Final Project</p></a>
+        
+        <p class="text-center">最终项目 Zuìzhōng xiàngmù</p>
 
-    <div class="modal fade" id="activityModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div  class="ratio  ratio-16x9 border shadow-white">
+            <iframe src="https://drive.google.com/file/d/1H46yBCKwmNbq1f7tZhV_UiDpsfZRgrGD/preview" allow="autoplay"></iframe>
+          </div>
+          
+          <div class="row mt-5">
+            <div>
+              <h1 >Program Failed</h1>
+              <p>
+                A short Mandarin film about a mysterious demise of an IT sudent.<br>
+              一部关于一名 IT 学生神秘死亡的国语短片。<br>
+              Yī bù guānyú yī míng IT xuéshēng shénmì sǐwáng de guóyǔ duǎnpiàn.
+              </p>
+              <a href="https://a201c87b-b400-4eb8-a9c5-58765d57a557.filesusr.com/ugd/67f2dd_f6d7a6a2dffa44a4aab4bcb9a5bf7b8c.pdf" class="btn btn-primary bi bi-file-earmark-text-fill"  target="_blank">
+                Script
+              </a>
+            </div>
+        
+          </div>
+
+      </div>
+    </div>
+    
+
+    <div class="modal fade" id="activityModal" data-bs-backdrop="static"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl static">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title text-white" id="modalTitle">Modal title</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <a type="button" class="btn-close btn-close-white" href="javascript:closeAct();" ></a>
           </div>
           <div class="modal-body">
             <div class="ratio  ratio-16x9">
               <iframe src=""  allow="autoplay" id="activityiFrame"></iframe>
             </div>
+            <p class="text-white mt-3" id="activityDescription"></p>
           </div>
         </div>
       </div>
@@ -333,13 +363,43 @@
           "https://drive.google.com/file/d/1oy-Qhp3aJO0NBiQntnppEe5qIVntEXNu/preview",
           "https://drive.google.com/file/d/12-gOgDqqHrO_fieISkC_p5GknNSMSRh4/preview"]
 
+          const actDescriptions = ["Writing my first hanzi characters.<br> 写我的第一个汉字。<br> Xiě wǒ de dì yī gè hànzì.",
+          "Practicing Mandarin verbally.<br>练习普通话口语<br>Liànxí pǔtōnghuà kǒuyǔ.",
+          "Introducing myself in Mandarin.<br>用普通话自我介绍。<br>Yòng pǔtōnghuà zìwǒ jièshào.",
+          "Introducing my best friend in Mandarin.<br>用普通话介绍我最好的朋友。<br>Yòng pǔtōnghuà jièshào wǒ zuì hǎo de péngyǒu.",
+          "Showing my family tree in Mandarin.<br>用普通话展示我的家谱。<br>Yòng pǔtōnghuà zhǎnshì wǒ de jiāpǔ.",
+          "Ordering at a McDonald's in Mandarin<br>在 McDonald 用普通话订购<br>Zài McDonald yòng pǔtōnghuà dìnggòu"];
+
           document.getElementById("modalTitle").innerHTML = "Activity #"+i;
+          document.getElementById("activityDescription").innerHTML = actDescriptions[i-1];
           document.getElementById("activityiFrame").setAttribute("src",actLinks[i-1]);
           $("#activityModal").modal("show");
         }
 
+        function closeAct(){
+          $("#activityModal").modal("hide");
+          document.getElementById("activityiFrame").setAttribute("src","");
+        }
+
     </script>
-  
+    <footer class="bg-black text-opacity-50 text-white border-top border-primary">
+      <div class="container py-3">
+        <div class="row">
+          <div class="col-6">
+            Ivan Gonzales • BSIT 3DG2<br>Bulacan State University<br>College of Information and Communications Technology
+          </div>
+          <div class="col-6">
+            <p class="bi bi-envelope">
+              ivan.gonzales.s@bulsu.edu.ph
+            </p>
+            <p class="bi bi-envelope">
+              gonzales.ivan.bsit@gmail.com
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </footer>
    
 </body>
 </html>

@@ -88,6 +88,23 @@
 }
 
 #activityModal .modal-content {
-  background: transparent;
-  border: none;
+  background: black;
+  border-color: white;
+}
+
+
+.btn-outline-primary:hover {
+  --box-shadow-color: var(--bs-primary);
+  box-shadow: 0 0 30px var(--box-shadow-color);
+}
+
+.btn-primary:hover {
+  --box-shadow-color: var(--bs-primary);
+  box-shadow: 0 0 30px var(--box-shadow-color);
+}
+
+.shadow-white{
+  --box-shadow-color: rgb(97, 97, 97);
+  box-shadow: 0 0 30px var(--box-shadow-color);
+  
 }
