@@ -296,19 +296,25 @@
         
         <p class="text-center">最终项目 Zuìzhōng xiàngmù</p>
 
-          <div  class="ratio  ratio-16x9 border shadow-white">
-            <iframe src="https://drive.google.com/file/d/1H46yBCKwmNbq1f7tZhV_UiDpsfZRgrGD/preview" allow="autoplay"></iframe>
-          </div>
+          <!-- <div  class="ratio  ratio-16x9 border shadow-white">
+            <iframe src="https://drive.google.com/file/d/1H46yBCKwmNbq1f7tZhV_UiDpsfZRgrGD/preview" allow="autoplay" allowfullscreen></iframe>
+          </div> -->
           
           <div class="row mt-5">
-            <div>
-              <h1 >Program Failed</h1>
+            <div class="col-12 col-lg-5">
+              <img src="images/poster1.png" alt="" class="img-fluid">
+            </div>
+            <div class="col-12 col-lg-6 align-self-center mx-lg-4">
+              <h1 class="mt-3">Program Failed</h1>
               <p>
-                A short Mandarin film about a mysterious demise of an IT sudent.<br>
-              一部关于一名 IT 学生神秘死亡的国语短片。<br>
-              Yī bù guānyú yī míng IT xuéshēng shénmì sǐwáng de guóyǔ duǎnpiàn.
+                A short Mandarin film about the mysterious demise of an IT student.<br>
+                一部关于一名信息技术学生神秘死亡的国语短片。<br>
+                Yī bù guānyú yī míng xìnxī jìshù xuéshēng shénmì sǐwáng de guóyǔ duǎnpiàn.
               </p>
-              <a href="https://a201c87b-b400-4eb8-a9c5-58765d57a557.filesusr.com/ugd/67f2dd_f6d7a6a2dffa44a4aab4bcb9a5bf7b8c.pdf" class="btn btn-primary bi bi-file-earmark-text-fill"  target="_blank">
+              <a class="btn  btn-primary bi bi-caret-right-square-fill" href="javascript:showAct(7);">
+                Watch
+              </a>
+              <a href="https://a201c87b-b400-4eb8-a9c5-58765d57a557.filesusr.com/ugd/67f2dd_f6d7a6a2dffa44a4aab4bcb9a5bf7b8c.pdf" class="btn  btn-secondary bi bi-file-earmark-text-fill"  target="_blank">
                 Script
               </a>
             </div>
@@ -335,7 +341,7 @@
                   </div>
                 </div>
               </div>
-              <iframe src=""  allow="autoplay" id="activityiFrame"></iframe>
+              <iframe src=""  allow="autoplay" id="activityiFrame" allowfullscreen></iframe>
             </div>
             <p class="text-white mt-3" id="activityDescription"></p>
           </div>
@@ -367,16 +373,26 @@
           "https://drive.google.com/file/d/1vD0I3nkeuVk1SdDYA9wIF5bi13ib46N0/preview",
           "https://drive.google.com/file/d/1FzOkCacm0XyzabyxQtfZ3S_zsdh20wws/preview",
           "https://drive.google.com/file/d/1oy-Qhp3aJO0NBiQntnppEe5qIVntEXNu/preview",
-          "https://drive.google.com/file/d/12-gOgDqqHrO_fieISkC_p5GknNSMSRh4/preview"]
+          "https://drive.google.com/file/d/12-gOgDqqHrO_fieISkC_p5GknNSMSRh4/preview",
+        "https://drive.google.com/file/d/1H46yBCKwmNbq1f7tZhV_UiDpsfZRgrGD/preview"]
 
           const actDescriptions = ["Writing my first hanzi characters.<br> 写我的第一个汉字。<br> Xiě wǒ de dì yī gè hànzì.",
           "Practicing Mandarin verbally.<br>练习普通话口语<br>Liànxí pǔtōnghuà kǒuyǔ.",
           "Introducing myself in Mandarin.<br>用普通话自我介绍。<br>Yòng pǔtōnghuà zìwǒ jièshào.",
           "Introducing my best friend in Mandarin.<br>用普通话介绍我最好的朋友。<br>Yòng pǔtōnghuà jièshào wǒ zuì hǎo de péngyǒu.",
           "Showing my family tree in Mandarin.<br>用普通话展示我的家谱。<br>Yòng pǔtōnghuà zhǎnshì wǒ de jiāpǔ.",
-          "Ordering at a McDonald's in Mandarin<br>在 McDonald 用普通话订购<br>Zài McDonald yòng pǔtōnghuà dìnggòu"];
+          "Ordering at a McDonald's in Mandarin<br>在 McDonald 用普通话订购<br>Zài McDonald yòng pǔtōnghuà dìnggòu",
+          "Program Failed<br>A short Mandarin film about the mysterious demise of an IT student.<br>一部关于一名信息技术学生神秘死亡的国语短片。<br>Yī bù guānyú yī míng xìnxī jìshù xuéshēng shénmì sǐwáng de guóyǔ duǎnpiàn."];
 
-          document.getElementById("modalTitle").innerHTML = "Activity #"+i;
+          const actTitles = ["Activity #1",
+          "Activity #2",
+          "Activity #3",
+          "Activity #4",
+          "Activity #5",
+          "Activity #6",
+        "Final Project"];
+
+          document.getElementById("modalTitle").innerHTML = actTitles[i-1];
           document.getElementById("activityDescription").innerHTML = actDescriptions[i-1];
           document.getElementById("activityiFrame").setAttribute("src",actLinks[i-1]);
           $("#activityModal").modal("show");
